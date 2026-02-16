@@ -5,9 +5,8 @@ public class Policy{
    String holder_Last;
    int holder_Age;
    String smoker;
-   int height;
-   int weight;
-   int BMI;
+   double height;
+   double weight;
    public Policy(){
       this.policy_Number=0;
       this.provider_name = "company";
@@ -18,7 +17,7 @@ public class Policy{
       this.height = 0;
       this.weight = 0;
    }
-   public Policy(int number, String name, String first, String last,int age, String smoker, int height, int weight ){
+   public Policy(int number, String name, String first, String last,int age, String smoker, double height, double weight ){
       this.policy_Number=number;
       this.provider_name = name;
       this.holder_First= first;
@@ -46,10 +45,10 @@ public class Policy{
    public String get_Smoker(){
       return smoker;
    }
-   public int get_Height(){
+   public double get_Height(){
       return height;
    }
-   public int get_Weight(){
+   public double get_Weight(){
       return weight;
    }
    public void set_Number(int number){
@@ -70,18 +69,18 @@ public class Policy{
    public void set_Smoker(String smoker){
       this.smoker = smoker;
    }
-   public void set_Height(int height){
+   public void set_Height(double height){
       this.height=height;
    }
-   public void set_Weight(int weight){
+   public void set_Weight(double weight){
       this.weight = weight;
    }
-   public int BMICalc(){
+   public double BMICalc(){
       return( (weight*703)/(height*height));
    }
-   public int policyCost(){
+   public double policyCost(){
       int cost;
-      int BMI = BMICalc(); 
+      double BMI = BMICalc(); 
       cost = 600;
       if (holder_Age > 50){
          cost +=75;
