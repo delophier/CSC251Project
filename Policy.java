@@ -76,7 +76,7 @@ public class Policy{
    public void set_Weight(int weight){
       this.weight = weight;
    }
-   private int BMICalc(){
+   public int BMICalc(){
       return( (weight*703)/(height*height));
    }
    public int policyCost(){
