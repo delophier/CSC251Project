@@ -79,7 +79,7 @@ public class Policy{
       return( (weight*703)/(height*height));
    }
    public double policyCost(){
-      int cost;
+      double cost;
       double BMI = BMICalc(); 
       cost = 600;
       if (holder_Age > 50){
