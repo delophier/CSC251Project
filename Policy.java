@@ -13,7 +13,6 @@ public class Policy{
    String smoker;
    /** @param height holders height */
    double height;
-   double power;
    /** @param height holders weight */
    double weight;
    public Policy(){
