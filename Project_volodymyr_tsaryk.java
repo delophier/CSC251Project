@@ -18,13 +18,15 @@ public class Project_volodymyr_tsaryk
       double weight;      
       while(inputFile.hasNext()){
          policy = inputFile.nextInt();
+         inputFile.nextLine();
          name = inputFile.nextLine();
          first = inputFile.nextLine();
          last = inputFile.nextLine();
          age = inputFile.nextInt();
+         inputFile.nextLine();
          smoker = inputFile.nextLine();
-         height = inputFile.nextInt();
-         weight = inputFile.nextInt();
+         height = inputFile.nextDouble();
+         weight = inputFile.nextDouble();
          inputFile.nextLine();
          policies.add(new Policy(policy,name,first,last,age,smoker,height,weight));
          
