@@ -1,3 +1,4 @@
+import java.math.*;
 public class PolicyHolder{
    /** @param holder_First first name */
    String holder_First;
@@ -54,5 +55,13 @@ public class PolicyHolder{
    public void set_Weight(double weight){
       this.weight = weight;
    }
-
+   public double BMICalc(){
+      double rounded = Math.round((weight*703)/(height*height)*100.0);
+      rounded = rounded/100.0;
+      return (rounded);
+   }
+   
+   public String toString(){
+   return("Policyholder’s First Name: " + holder_First+ "\n" + "Policyholder’s Last Name: " + holder_Last + "\n" + "Policyholder’s Age: " + holder_Age + "\n" + "Policyholder’s Smoking Status: " + smoker +"\n" +"Policyholder’s Height: " + height+"\n"+"Policyholder’s Weight: " + weight + "\n" + "Policyholder’s BMI: " + BMICalc());
+   }
 }
