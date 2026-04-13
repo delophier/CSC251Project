@@ -3,14 +3,16 @@ public class Policy{
    int policy_Number;
    /** @param provider_name insurance company */
    String provider_name;
+   static int policyCount=0;
    public Policy(){
       this.policy_Number=0;
       this.provider_name = "company";
+      ++policyCount;
    }
    public Policy(int number, String name, String first, String last,int age, String smoker, double height, double weight ){
       this.policy_Number=number;
       this.provider_name = name;
-      
+      ++policyCount;
    }
    public int get_Number(){
    /** @return the policy number */
