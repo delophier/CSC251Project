@@ -27,9 +27,6 @@ public class Policy{
       this.provider_name=company;
    }
    
-   public double BMICalc(){
-      return( (weight*703)/(height*height));
-   }
    public double policyCost(){
       double cost;
       double BMI = BMICalc(); 
@@ -44,8 +41,13 @@ public class Policy{
          cost +=(BMI-35)*20;
       }
       /** @return the cost of the policy */
-      return cost;
+      double rounded = Math.round(cost);
+      rounded = rounded/100.0;
+      return (rounded);
    } 
+   public String toString(){
+   return ("Policy Number: " + policy_Number() + "\n" + "Provider Name: "+ provider_name +"\n" +"Policy Price: $%.2f%n" + policyCost());
+   }
 
 
    
