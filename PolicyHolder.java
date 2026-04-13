@@ -12,7 +12,30 @@ public class PolicyHolder{
    double height;
    /** @param height holders weight */
    double weight;
-   
+   public PolicyHolder(String first,String last,int age,String smoke,double heightIN,double weightLB){
+      holder_First = first;
+      holder_Last=last;
+      holder_Age=age;
+      smoker=smoke;
+      height = heightIN;
+      weight = weightLB;
+   }
+   public PolicyHolder(PolicyHolder obj){
+      holder_First =obj.holder_First;
+      holder_Last=obj.holder_Last;
+      holder_Age=obj.holder_Age;
+      smoker=obj.smoker;
+      height = obj.height;
+      weight = obj.weight;
+   }
+   public PolicyHolder(){
+      holder_First ="";
+      holder_Last="";
+      holder_Age=0;
+      smoker="";
+      height = 0.0;
+      weight = 0.0;
+   }
    public String get_Fisrt(){
    /** @return the policy holders first name */
       return holder_First;

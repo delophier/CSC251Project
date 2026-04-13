@@ -3,15 +3,18 @@ public class Policy{
    int policy_Number;
    /** @param provider_name insurance company */
    String provider_name;
-   static int policyCount=0;
+   private PolicyHolder person;
+   public static int policyCount=0;
    public Policy(){
       this.policy_Number=0;
       this.provider_name = "company";
+      person = new PolicyHolder();
       ++policyCount;
    }
-   public Policy(int number, String name, String first, String last,int age, String smoker, double height, double weight ){
+   public Policy(int number, String name, PolicyHolder holder ){
       this.policy_Number=number;
       this.provider_name = name;
+      person = new PolicyHolder(holder);
       ++policyCount;
    }
    public int get_Number(){
@@ -31,24 +34,24 @@ public class Policy{
    
    public double policyCost(){
       double cost;
-      double BMI = BMICalc(); 
+      double BMI = person.BMICalc(); 
       cost = 600;
-      if (holder_Age > 50){
+      if (person.holder_Age > 50){
          cost +=75;
       }
-      if (smoker.equals("smoker")){
+      if (person.smoker.equals("smoker")){
          cost +=100;
       }
       if (BMI > 35){
          cost +=(BMI-35)*20;
       }
       /** @return the cost of the policy */
-      double rounded = Math.round(cost);
+      double rounded = Math.round(cost*100.0);
       rounded = rounded/100.0;
       return (rounded);
    } 
    public String toString(){
-   return ("Policy Number: " + policy_Number() + "\n" + "Provider Name: "+ provider_name +"\n" +"Policy Price: $%.2f%n" + policyCost());
+   return ("Policy Number: " + policy_Number + "\n" + "Provider Name: "+ provider_name +"\n"+ person.toString() +"\n" +"Policy Price: " + policyCost());
    }
 
 
